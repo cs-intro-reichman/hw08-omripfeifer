@@ -156,6 +156,8 @@ class PlayList {
                     break ; 
                 }
             } 
+        } else {
+            return; 
         }
     }
 
