@@ -178,12 +178,18 @@ class PlayList {
     //// An elegant and terribly inefficient implementation.
      public void add(PlayList other) {
         
-        if ( size + other.getSize() <= maxSize ){
-            for( int i = 0 ; i < other.getSize() ; i++ ){
-                tracks[size] = other.getTrack(i) ;
-                size++ ;  
-            }
+        int sum = this.size+other.getSize();
+        if(sum>this.maxSize)
+        {
+            return;
         }
+        int j=0;
+        for(int i=this.size; i<sum||j<other.getSize(); i++)
+        {
+            this.tracks[i]=other.getTrack(j);
+            j++;
+        }
+        this.size=sum;
     }
 
     /** Returns the index in this list of the track that has the shortest duration,
