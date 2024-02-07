@@ -153,8 +153,9 @@ class PlayList {
                 if ( title.equals(tracks[i].getTitle())){
 
                     remove(i); 
+                    break ; 
                 }
-            }
+            } 
         }
     }
 
